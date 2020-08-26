@@ -1,0 +1,34 @@
+[icons]
+# font awesome
+TelegramDesktop = ""
+firefox = ""
+Alacritty = ""
+Termite = ""
+Thunderbird = ""
+Gpick = ""
+Slack = ""
+# smile emoji
+MyNiceProgram = "😛"
+Chromium = ""
+zoom = ""
+jetbrains-pycharm-ce = ""
+"org.qbittorrent.qBittorrent" = ""
+
+[aliases]
+TelegramDesktop = "Telegram"
+firefox = "Firefox"
+"Org.gnome.Nautilus" = "Nautilus"
+zoom = "Zoom"
+jetbrains-pycharm-ce = "pyCharm"
+Alacritty = " "
+Chromium = " "
+Firefox = " "
+Slack = " "
+"org.qbittorrent.qBittorrent" = "qBittorrent"
+
+
+[general]
+separator = "  "
+
+[options]
+remove_duplicates = true
