@@ -13,18 +13,23 @@ Chromium = ""
 zoom = ""
 jetbrains-pycharm-ce = ""
 "org.qbittorrent.qBittorrent" = ""
+"org.gnome.Nautilus" = ""
+eog = ""
+gnome-control-center = ""
+vlc = ""
 
 [aliases]
 TelegramDesktop = "Telegram"
 firefox = "Firefox"
-"Org.gnome.Nautilus" = "Nautilus"
+"org.gnome.Nautilus" = "Nautilus"
 zoom = "Zoom"
 jetbrains-pycharm-ce = "pyCharm"
 Alacritty = " "
-Chromium = " "
-Firefox = " "
-Slack = " "
 "org.qbittorrent.qBittorrent" = "qBittorrent"
+eog = "Image"
+gnome-control-center = "Settings"
+vlc = "VLC"
+Vlc = "VLC"
 
 
 [general]
