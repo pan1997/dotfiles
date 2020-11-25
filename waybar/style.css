@@ -1,34 +1,42 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: sans-serif;
-    font-size: 14px;
+    font-family: Source Code Pro;
+    font-size: 16px;
+    min-height: 0;
 }
 
-window {
-    background: rgba(0, 0, 0, 0.2);
-    color: white;
+window#waybar {
+	background-color: #282828;
+	color: #949494;
 }
 
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button {
-    padding: 5px 10px;
-    background: transparent;
+    padding: 0 5px;
+    background: #4a4a4a;
     color: white;
-    border-bottom: 3px solid transparent;
-}
-
-#workspaces button.icon label {
-    font-size: 10px;
 }
 
 #workspaces button.focused {
-    background: rgba(200, 200, 200, 0.1);
-    border-bottom: 3px solid white;
+    color: #ff8700;
 }
 
-#clock, #battery, #cpu, #memory, #network, #pulseaudio, #backlight, #temperature, #tray {
-    padding: 0 6px;
-    margin: 0 2px;
+#mode {
+    background: #282828;
+    color: #d05c5c;
+
+}
+
+#clock.1, #clock.2, #battery, #cpu, #memory, #backlight, #network, #pulseaudio, #custom-mpd, #tray, #mode, #idle_inhibitor {
+    padding: 0 10px;
+    margin: 0 0px;
+}
+
+#clock.2 {
+    background-color: transparent;
+    font-family: Source Code Pro;
+    font-size: 18px;
 }
 
 @keyframes blink {
@@ -38,13 +46,70 @@ window {
     }
 }
 
-#battery.warning {
-    background: #f53c3c;
-    color: white;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+#cpu {
+    background: #4e4e4e;
+}
+
+#memory {
+    background: #4e4e4e;
+}
+
+#network {
+    background: #4e4e4e;
+}
+
+#network.disconnected {
+    background: transparent;
+}
+
+#pulseaudio {
+    background: #3a3a3a;
+}
+
+#pulseaudio.muted {
+    background: #90b1b1;
+    color: #2a5c45;
+}
+
+#custom-mpd {
+    background: transparent;
+}
+
+#tray {
+    background-color: #949494;
+}
+
+#idle_inhibitor {
+    background-color: #2d3436;
+}
+#custom-arrow1 {
+	font-size: 24px;
+	color: #949494;
+	background: #4e4e4e
+}
+#custom-arrow2 {
+	font-size: 24px;
+	color: #ff8700;
+	background: #949494
+}
+#custom-arrow3 {
+	font-size: 24px;
+	background: #4e4e4e;
+	color: #949494
+}
+#custom-arrow4 {
+	font-size: 24px;
+	color: #4e4e4e;
+	background: #3a3a3a
+}
+#custom-arrow5 {
+	font-size: 24px;
+	color: #3a3a3a;
+	background: transparent;
+}
+#custom-arrow6 {
+	font-size: 24px;
+	color: #4a4a4a;
+	background: transparent;
 }
 
