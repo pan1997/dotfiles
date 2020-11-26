@@ -21,7 +21,8 @@ vlc = ""
 
 [aliases]
 TelegramDesktop = "Telegram"
-firefox = "Firefox"
+firefox = ""
+Chromium = ""
 "org.gnome.Nautilus" = "Nautilus"
 zoom = "Zoom"
 jetbrains-pycharm-ce = "pyCharm"

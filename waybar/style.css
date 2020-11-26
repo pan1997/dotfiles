@@ -18,6 +18,10 @@ window#waybar {
     color: white;
 }
 
+#window {
+    padding: 0 20px;
+}
+
 #workspaces button.focused {
     color: #ff8700;
 }
@@ -28,7 +32,7 @@ window#waybar {
 
 }
 
-#clock.1, #clock.2, #battery, #cpu, #memory, #backlight, #network, #pulseaudio, #custom-mpd, #tray, #mode, #idle_inhibitor {
+#clock.1, #clock.2, #battery, #cpu, #memory, #backlight, #network, #pulseaudio, #custom-mpd, #custom-playerctl, #tray, #mode, #idle_inhibitor {
     padding: 0 10px;
     margin: 0 0px;
 }
@@ -72,6 +76,10 @@ window#waybar {
 }
 
 #custom-mpd {
+    background: transparent;
+}
+
+#custom-playerctl {
     background: transparent;
 }
 
