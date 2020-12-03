@@ -11,13 +11,13 @@ Slack = ""
 MyNiceProgram = "😛"
 Chromium = ""
 zoom = ""
-jetbrains-pycharm-ce = ""
-jetbrains-idea-ce = ""
+jetbrains-pycharm-ce = ""
+jetbrains-idea-ce = ""
 "org.qbittorrent.qBittorrent" = ""
 "org.gnome.Nautilus" = ""
 eog = ""
 gnome-control-center = ""
-vlc = ""
+vlc = "嗢"
 
 [aliases]
 TelegramDesktop = "Telegram"
@@ -25,8 +25,8 @@ firefox = ""
 Chromium = ""
 "org.gnome.Nautilus" = "Nautilus"
 zoom = "Zoom"
-jetbrains-pycharm-ce = "pyCharm"
-jetbrains-idea-ce = "intelliJ"
+jetbrains-pycharm-ce = ""
+jetbrains-idea-ce = ""
 Alacritty = " "
 "org.qbittorrent.qBittorrent" = "qBittorrent"
 eog = "Image"
@@ -36,7 +36,8 @@ Vlc = "VLC"
 
 
 [general]
-separator = "  "
+#separator = "  "
+separator = " "
 
 [options]
 remove_duplicates = true

@@ -4,14 +4,14 @@
     "height": 25, // Waybar height
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces","custom/arrow6","sway/mode", "sway/window"],
-    "modules-center": ["clock#2"],
-    "modules-right": ["custom/playerctl", "custom/arrow5","pulseaudio","custom/arrow4", "network", "custom/arrow3", "cpu", "memory", "custom/arrow1", "tray","custom/arrow2"],
+    "modules-left": ["custom/arch", "sway/workspaces", "sway/mode", "sway/window"],
+    "modules-right": ["custom/media", "pulseaudio", "network", "cpu", "memory", "battery", "clock#2", "idle_inhibitor"],
     // Modules configuration
      "sway/workspaces": {
          "disable-scroll": true,
          "all-outputs": false,
-         "format": "{icon} {name}",
+         //"format": "{icon} {name}",
+         "format": "{name}",
 	 "format-icons": {
 	     "focused": "",
 	     "default": "",
@@ -19,14 +19,38 @@
 	 }
      },
     "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+        "format": "{}"
+    },
+    "sway/window": {
+        "format": "{}",
     },
     "tray": {
 	//"icon-size": 21,
         "spacing": 10
     },
     "clock#2": {
-        "format": "{:%H:%M | %d %B, %Y}"
+        "format": "{:%H:%M  %d %B, %Y }"
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
     },
     "cpu": {
         "format": "{usage}% "
@@ -39,7 +63,7 @@
         // "interface": "wlp2s0", // (Optional) To force the use of this interface
         // "format-wifi": "{essid} ({signalStrength}%) ",
         "format-wifi": "{essid}   {bandwidthDownBits}",
-        "format-ethernet": "{ifname}: {bandwidthDownBits} {bandwidthUpBits} ",
+        "format-ethernet": "{ifname}: {bandwidthDownBits} {bandwidthUpBits} ",
         //"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
         "format-disconnected": "Disconnected ⚠"
     },
@@ -59,38 +83,24 @@
         },
         "on-click": "pavucontrol"
     },
-    "custom/mpd": {
-        "format": "♪ {}",
-        //"max-length": 15,
-        "exec": "echo $(mpc current) – $(mpc status | awk '{print $3}' | sed -n 2p)",
-        "exec-if": "pgrep mpd",
-        "on-click-right": "mpc toggle",
-        "on-click": "alacritty -e ncmpcpp"
+    "custom/power": {
+        "format": "  ",
+        "on-click": "wlogout",
+        "tooltip": false
     },
-    "custom/playerctl": {
-        "format": "♪ {}",
-        "interval": 1,
-	"exec": "~/.config/waybar/scripts/playerctl.sh",
-        "on-click": "playerctl play-pause",
-	"max-length": 30,
+    "custom/arch": {
+        "format": ""
     },
-    "custom/arrow1": {
-        "format": ""
-    },
-    "custom/arrow3": {
-        "format": ""
-    },
-    "custom/arrow4": {
-        "format": ""
-    },
-    "custom/arrow5": {
-        "format": ""
-    },
-    "custom/arrow6": {
-        "format": ""
-    },
-    "custom/arrow2": {
-        "format": ""
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/scripts/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     }
 }
-

@@ -19,7 +19,7 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 
-set $menu dmenu_path | j4-dmenu-desktop --dmenu="bemenu -b -l 10 --fn Hack13 -i" --display-binary #| xargs swaymsg exec --
+set $menu dmenu_path | j4-dmenu-desktop --dmenu="bemenu -b -l 10 --fn SourceCodePro13 -i" --display-binary #| xargs swaymsg exec --
 #set $menu bemenu-run -b -l 10 --fn Hack13
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
 # set $menu dmenu_path | wofi -combi-modi window,drun,ssh -theme solarized -font "hack 10" -show combi -icon-theme "Papirus" -show-icons | xargs swaymsg exec --
@@ -38,7 +38,7 @@ exec_always {
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #output * bg /home/pankaj/Pictures/the-kings-journey-wallpaper.jpg fill
-output * bg /home/pankaj/Pictures/754629.jpg fill
+output * bg ~/.config/sway/bg.jpg fill
 #
 # Example configuration:
 #
@@ -247,11 +247,15 @@ include /etc/sway/config.d/*
 ### gaps
 gaps inner 10
 gaps outer 0
-smart_gaps on
-default_border pixel 0
+smart_gaps off1
 #smart_borders on
 #set $borderwidth 1
-hide_edge_borders both
+
+default_border none
+#client.focused b8bb26 282828 ebdbb2
+#client.focused_inactive 282828 282828 ebdbb2
+#client.unfocused 282828 282828 ebdbb2
+#hide_edge_borders both
 
 
 set $laptop eDP-1
@@ -282,7 +286,8 @@ bindsym Control+Print exec grimshot --notify copy area
 bindsym Alt+Print exec grimshot --notify save screen
 bindsym Alt+Control+Print exec grimshot --notify save area
 
-exec_always swaywsr --config ~/.config/swaywsr/config.toml
+#exec_always swaywsr --config ~/.config/swaywsr/config.toml
+exec_always ~/.config/sway/tweaks.py
 
 input type:pointer {
     accel_profile flat

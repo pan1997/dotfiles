@@ -2,45 +2,54 @@
     border: none;
     border-radius: 0;
     font-family: Source Code Pro;
-    font-size: 16px;
+    font-size: 14px;
     min-height: 0;
 }
 
 window#waybar {
-	background-color: #282828;
-	color: #949494;
+    /*background: #282828;*/
+    background: #1d2021;
+    /*background: transparent;*/
+    color: #ebdbd2;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button {
-    padding: 0 5px;
-    background: #4a4a4a;
-    color: white;
+    background: #32302f;
+    color: #ebdbd2;
+    border-right: 1px solid #1d2021;
 }
 
 #window {
     padding: 0 20px;
+    background: transparent;
+    font-size: 12px; 
 }
 
+#workspaces button.urgent {
+    color: #cc241d;
+}
 #workspaces button.focused {
-    color: #ff8700;
+    /*color: #ff8700;*/
+    color: #b8bb26;
+    border-bottom: 1px solid #b8bb26;
+    /*color: #58d1eb;*/
 }
 
 #mode {
     background: #282828;
-    color: #d05c5c;
-
 }
 
-#clock.1, #clock.2, #battery, #cpu, #memory, #backlight, #network, #pulseaudio, #custom-mpd, #custom-playerctl, #tray, #mode, #idle_inhibitor {
+#clock.1, #clock.2, #battery, #cpu, #memory, #backlight, #network, #pulseaudio, #custom-mpd, #custom-playerctl, #tray, #mode, #idle_inhibitor, #custom-arch, #custom-media {
     padding: 0 10px;
     margin: 0 0px;
+    background: #32302f;
+    border-left: 1px solid #1d2021;
 }
 
 #clock.2 {
-    background-color: transparent;
-    font-family: Source Code Pro;
-    font-size: 18px;
+    background: #ebdbb2;
+    color: #1d2021;
 }
 
 @keyframes blink {
@@ -50,74 +59,31 @@ window#waybar {
     }
 }
 
-#cpu {
-    background: #4e4e4e;
-}
-
-#memory {
-    background: #4e4e4e;
-}
-
-#network {
-    background: #4e4e4e;
-}
-
 #network.disconnected {
-    background: transparent;
-}
-
-#pulseaudio {
-    background: #3a3a3a;
+    color: red;
 }
 
 #pulseaudio.muted {
-    background: #90b1b1;
     color: #2a5c45;
 }
 
-#custom-mpd {
-    background: transparent;
-}
-
-#custom-playerctl {
-    background: transparent;
+#custom-media { 
+    color: #b8bb26;
 }
 
 #tray {
-    background-color: #949494;
+    background-color: #98971a;
 }
 
 #idle_inhibitor {
-    background-color: #2d3436;
+    background-color: #98971a;
+    padding: 0px 10px;
 }
-#custom-arrow1 {
-	font-size: 24px;
-	color: #949494;
-	background: #4e4e4e
-}
-#custom-arrow2 {
-	font-size: 24px;
-	color: #ff8700;
-	background: #949494
-}
-#custom-arrow3 {
-	font-size: 24px;
-	background: #4e4e4e;
-	color: #949494
-}
-#custom-arrow4 {
-	font-size: 24px;
-	color: #4e4e4e;
-	background: #3a3a3a
-}
-#custom-arrow5 {
-	font-size: 24px;
-	color: #3a3a3a;
-	background: transparent;
-}
-#custom-arrow6 {
-	font-size: 24px;
-	color: #4a4a4a;
-	background: transparent;
+
+#custom-arch {
+    color: #458588;
+    background: #1d2021;
+    font-size: 18px;
+    padding: 0px 10px;
 }
 
