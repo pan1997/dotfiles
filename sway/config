@@ -265,7 +265,7 @@ default_floating_border none
 set $laptop eDP-1
 bindswitch lid:on output $laptop disable
 bindswitch lid:off output $laptop enable
-bindsym $mod+l exec swaylock -f -c 000000
+bindsym $mod+l exec swaylock
 
 #exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 
