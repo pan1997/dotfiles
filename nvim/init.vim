@@ -7,6 +7,7 @@ Plug 'scrooloose/nerdTree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -22,6 +23,4 @@ let g:gruvbox_italic=1
 set background=dark
 colorscheme gruvbox
 
-let g:airline_theme='solarized'
-let g:airline_solarized_bg='dark'
 set number

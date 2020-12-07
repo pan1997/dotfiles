@@ -14,15 +14,18 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term kitty
+
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 
-set $menu dmenu_path | j4-dmenu-desktop --dmenu="bemenu -b -l 10 --fn SourceCodePro13 -i" --display-binary #| xargs swaymsg exec --
+# set $menu dmenu_path | j4-dmenu-desktop --dmenu="bemenu -b -l 10 --fn SourceCodePro13 -i" --display-binary #| xargs swaymsg exec --
+
+set $menu ulauncher --no-window-shadow
+
 #set $menu bemenu-run -b -l 10 --fn Hack13
-# set $menu dmenu_path | dmenu | xargs swaymsg exec --
-# set $menu dmenu_path | wofi -combi-modi window,drun,ssh -theme solarized -font "hack 10" -show combi -icon-theme "Papirus" -show-icons | xargs swaymsg exec --
+
 set $my_cursor Bibata-Modern-Classic
 set $my_cursor_size 24
 
@@ -252,6 +255,7 @@ smart_gaps off1
 #set $borderwidth 1
 
 default_border none
+default_floating_border none
 #client.focused b8bb26 282828 ebdbb2
 #client.focused_inactive 282828 282828 ebdbb2
 #client.unfocused 282828 282828 ebdbb2

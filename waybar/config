@@ -5,18 +5,12 @@
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": ["custom/arch", "sway/workspaces", "sway/mode", "sway/window"],
-    "modules-right": ["custom/media", "pulseaudio", "network", "cpu", "memory", "battery", "clock#2", "idle_inhibitor"],
+    "modules-right": ["custom/media", "pulseaudio", "custom/network", "cpu", "memory", "battery", "clock#2", "idle_inhibitor", "custom/power"],
     // Modules configuration
      "sway/workspaces": {
          "disable-scroll": true,
          "all-outputs": false,
-         //"format": "{icon} {name}",
          "format": "{name}",
-	 "format-icons": {
-	     "focused": "",
-	     "default": "",
-	     "urgent": "",
-	 }
      },
     "sway/mode": {
         "format": "{}"
@@ -65,7 +59,8 @@
         "format-wifi": "{essid}   {bandwidthDownBits}",
         "format-ethernet": "{ifname}: {bandwidthDownBits} {bandwidthUpBits} ",
         //"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "format-disconnected": "Disconnected ⚠"
+        "format-disconnected": "Disconnected ⚠",
+        "interval": 1,
     },
     "pulseaudio": {
         "scroll-step": 5,
@@ -101,6 +96,23 @@
         },
         "escape": true,
         "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/scripts/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/network": {
+        "format": "{}",
+        "return-type": "json",
+        "max-length": 40,
+        "escape": true,
+        "exec": "$HOME/.config/waybar/scripts/network.py 2> /dev/null" // Script in resources folder
+    },
+    "wlr/taskbar": {
+      "format": "{icon}",
+      // "format": "{title:.16}",
+      "icon-theme": "Papirus",
+      "icon-size": 15,
+      "on-click": "activate",
+      "markup": true,
+      "max-length": 7,
+      "on-click-right": "minimize",
+      "on-click-middle": "close"
     }
 }

@@ -15,5 +15,3 @@ async def main():
 
 me = singleton.SingleInstance()  # allow only one instance to run
 asyncio.run(main())
-
-

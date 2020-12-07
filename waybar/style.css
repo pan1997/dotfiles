@@ -32,7 +32,7 @@ window#waybar {
 #workspaces button.focused {
     /*color: #ff8700;*/
     color: #b8bb26;
-    border-bottom: 1px solid #b8bb26;
+    border-bottom: 2px solid #b8bb26;
     /*color: #58d1eb;*/
 }
 
@@ -40,7 +40,7 @@ window#waybar {
     background: #282828;
 }
 
-#clock.1, #clock.2, #battery, #cpu, #memory, #backlight, #network, #pulseaudio, #custom-mpd, #custom-playerctl, #tray, #mode, #idle_inhibitor, #custom-arch, #custom-media {
+#clock.1, #clock.2, #battery, #cpu, #memory, #backlight, #network, #pulseaudio, #custom-mpd, #custom-playerctl, #tray, #mode, #idle_inhibitor, #custom-arch, #custom-media, #custom-network, #custom-power {
     padding: 0 10px;
     margin: 0 0px;
     background: #32302f;
@@ -78,6 +78,11 @@ window#waybar {
 #idle_inhibitor {
     background-color: #98971a;
     padding: 0px 10px;
+}
+
+#custom-power {
+    background-color: #fb4934;
+    padding: 0px 5px;
 }
 
 #custom-arch {

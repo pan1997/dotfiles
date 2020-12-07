@@ -40,7 +40,6 @@ def on_metadata(player, metadata, manager):
                                                  title=player.get_title())
     else:
         track_info = player.get_title()
-
     if player.props.status != 'Playing' and track_info:
         track_info = ' ' + track_info
     write_output(track_info, player)
