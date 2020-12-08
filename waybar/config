@@ -5,7 +5,20 @@
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": ["custom/arch", "sway/workspaces", "sway/mode", "sway/window"],
-    "modules-right": ["custom/media", "pulseaudio", "custom/network", "cpu", "memory", "battery", "clock#2", "idle_inhibitor", "custom/power"],
+    "modules-right": [
+        "custom/media",
+        "pulseaudio",
+        "custom/network",
+        "cpu",
+        "memory",
+        "disk",
+        "battery",
+        "clock#1",
+        "clock#2",
+        "tray",
+        "idle_inhibitor",
+        "custom/power"
+    ],
     // Modules configuration
      "sway/workspaces": {
          "disable-scroll": true,
@@ -22,8 +35,11 @@
 	//"icon-size": 21,
         "spacing": 10
     },
+    "clock#1": {
+        "format": "{:%H:%M }"
+    },
     "clock#2": {
-        "format": "{:%H:%M  %d %B, %Y }"
+        "format": "{:%d %B, %Y }"
     },
     "battery": {
         "states": {
@@ -51,7 +67,11 @@
     },
     "memory": {
         "format": "{}% ",
-	"on-click": "alacritty -e htop"
+        "on-click": "alacritty -e htop"
+    },
+    "disk": {
+        "format": "{percentage_used}% ",
+        "interval": 60,
     },
     "network": {
         // "interface": "wlp2s0", // (Optional) To force the use of this interface
@@ -66,7 +86,7 @@
         "scroll-step": 5,
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon}",
-        "format-muted": "",
+        "format-muted": "          ",
         "format-icons": {
             "headphones": "",
             "handsfree": "",
@@ -74,7 +94,18 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", ""]
+            "default": [
+                "█         ",
+                "██        ",
+                "███       ",
+                "████      ",
+                "█████     ",
+                "██████    ",
+                "███████   ",
+                "████████  ",
+                "█████████ ",
+                "██████████",
+            ]
         },
         "on-click": "pavucontrol"
     },

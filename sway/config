@@ -22,7 +22,8 @@ set $term kitty
 
 # set $menu dmenu_path | j4-dmenu-desktop --dmenu="bemenu -b -l 10 --fn SourceCodePro13 -i" --display-binary #| xargs swaymsg exec --
 
-set $menu ulauncher --no-window-shadow
+#set $menu ulauncher --no-window-shadow
+set $menu wofi -c ~/.config/wofi/config -I
 
 #set $menu bemenu-run -b -l 10 --fn Hack13
 

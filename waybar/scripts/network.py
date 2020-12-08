@@ -14,7 +14,7 @@ import time
 class Configuration(object):
     logger = logging.getLogger(__name__)
     format = "{down} {up} "
-    padding = 30
+    padding = 20
     excluded_interfaces = ["lo*", "tun*"]
     
 
@@ -39,7 +39,7 @@ def write_output(data: counters, configuration: Configuration):
         'text': f"""{configuration.format.format(
             down=human_readable_bytes(data.bytes_recv),
             up=human_readable_bytes(data.bytes_sent)
-        ):>{configuration.padding}}""",
+        ) if data else "":>{configuration.padding}}""",
         'class': 'custom-network',
         'alt': 'custom-network'
     }
@@ -68,6 +68,7 @@ def get_data(configuration: Configuration) -> counters:
 def main():
     configuration = Configuration()
     old_count = get_data(configuration)
+    write_output(None, configuration)
     while True:
         time.sleep(1)
         count = get_data(configuration)

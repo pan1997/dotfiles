@@ -17,37 +17,51 @@ window#waybar {
 #workspaces button {
     background: #32302f;
     color: #ebdbd2;
-    border-right: 1px solid #1d2021;
+    border-right: 2px solid #1d2021;
 }
 
 #window {
     padding: 0 20px;
     background: transparent;
-    font-size: 12px; 
+    font-size: 13px;
 }
 
 #workspaces button.urgent {
     color: #cc241d;
 }
 #workspaces button.focused {
-    /*color: #ff8700;*/
     color: #b8bb26;
     border-bottom: 2px solid #b8bb26;
-    /*color: #58d1eb;*/
 }
 
 #mode {
     background: #282828;
 }
 
-#clock.1, #clock.2, #battery, #cpu, #memory, #backlight, #network, #pulseaudio, #custom-mpd, #custom-playerctl, #tray, #mode, #idle_inhibitor, #custom-arch, #custom-media, #custom-network, #custom-power {
+#clock.1, #clock.2, #battery, #cpu, #memory, #backlight, #network, #pulseaudio, #custom-mpd, #custom-playerctl, #tray, #mode, #idle_inhibitor, #custom-arch, #custom-media, #custom-network, #custom-power, #disk {
     padding: 0 10px;
     margin: 0 0px;
     background: #32302f;
-    border-left: 1px solid #1d2021;
+    border-left: 2px solid #1d2021;
 }
 
-#clock.2 {
+#disk {
+    color: #b16286;
+}
+
+#cpu {
+    color: #fabd2f;
+}
+
+#memory {
+    color: #d3869b;
+}
+
+#battery {
+    color: #8ec07c;
+}
+
+#clock.2, #clock.1 {
     background: #ebdbb2;
     color: #1d2021;
 }
@@ -60,11 +74,15 @@ window#waybar {
 }
 
 #network.disconnected {
-    color: red;
+    color: #fb4934;
 }
 
 #pulseaudio.muted {
-    color: #2a5c45;
+    color: #fb4934;
+}
+
+#pulseaudio {
+    color: #458588;
 }
 
 #custom-media { 
@@ -78,6 +96,7 @@ window#waybar {
 #idle_inhibitor {
     background-color: #98971a;
     padding: 0px 10px;
+    border-left: 0px;
 }
 
 #custom-power {
@@ -88,7 +107,7 @@ window#waybar {
 #custom-arch {
     color: #458588;
     background: #1d2021;
-    font-size: 18px;
+    font-size: 20px;
     padding: 0px 10px;
 }
 

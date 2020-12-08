@@ -1,0 +1,41 @@
+#entry {
+  padding: 5px;
+}
+
+#entry:selected {
+  background-color: #32302f;
+}
+
+#text:selected {
+  color: #98971a;
+}
+
+#window {
+  background-color: #1d2021;
+  font-family: Jetbrains Mono;
+  font-size: 15px;
+}
+
+#input {
+  background-color: #32302f;
+  margin: 0px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  color: #ebdbb2;
+}
+
+#inner-box {
+  color: #d8dee9;
+  padding: 0px;
+  background-color: transparent;
+}
+
+#text {
+  color: #ebdbb2;
+  background-color: transparent;
+}
+
+#img {
+  background-color: transparent;
+  padding: 0 10px 5px 5px;
+}

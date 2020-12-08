@@ -16,6 +16,7 @@ class Configuration(object):
     separator: str = "  "
     aliases: Dict[str, str] = {}
     icons: Dict[str, str] = {
+        "ulauncher": "",
         "TelegramDesktop": "",
         "firefox": "",
         "Alacritty": "",
@@ -33,6 +34,7 @@ class Configuration(object):
         "gnome-control-center": "",
         "eog": "",
     }
+    remove_duplicates = True  # Remove duplicates in the same workspace
     show_names: bool = False
     ignored_workspaces: List[str] = ["__i3_scratch"]
     log: logging.Logger = logging.Logger(name="wsr")
@@ -60,6 +62,8 @@ def get_classes(workspace: Con, configuration: Configuration) -> List[str]:
     assert workspace.type == "workspace"
     leaves = workspace.leaves()
     result = [get_class(window, configuration) for window in leaves]
+    if configuration.remove_duplicates:
+        result = list(dict.fromkeys(result))
     return result
 
 
