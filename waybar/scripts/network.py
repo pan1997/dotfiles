@@ -14,9 +14,8 @@ import time
 class Configuration(object):
     logger = logging.getLogger(__name__)
     format = "{down} {up} "
-    padding = 18
     excluded_interfaces = ["lo*", "tun*"]
-    
+    number_padding = 6
 
 counters = \
     namedtuple(
@@ -25,11 +24,11 @@ counters = \
     )
 
 
-def human_readable_bytes(count: int) -> str:
+def human_readable_bytes(count: int, configuration: Configuration) -> str:
     count = count / 1024
     for tag in ["kB", "MB", "GB", "TB"]:
         if count < 1024:
-            return f"{count:.1f}{tag}"
+            return f"{count:{configuration.number_padding}.1f}{tag}"
         count = count / 1024
     return "∞"
 
@@ -37,10 +36,10 @@ def human_readable_bytes(count: int) -> str:
 def write_output(data: counters, configuration: Configuration):
     configuration.logger.info('Writing output')
     output = {
-        'text': f"""{configuration.format.format(
-            down=human_readable_bytes(data.bytes_recv),
-            up=human_readable_bytes(data.bytes_sent)
-        ) if data else "":>{configuration.padding}}""",
+        'text': configuration.format.format(
+            down=human_readable_bytes(data.bytes_recv if data else 0, configuration),
+            up=human_readable_bytes(data.bytes_sent if data else 0, configuration)
+        ),
         'class': 'custom-network',
         'alt': 'custom-network'
     }

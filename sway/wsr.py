@@ -8,6 +8,7 @@ from i3ipc.aio import Con
 from i3ipc import WindowEvent, WorkspaceEvent, Event, WorkspaceReply
 import functools
 import logging
+import collections
 
 from typing import List, Dict
 
@@ -37,6 +38,8 @@ class Configuration(object):
         "pavucontrol": "蓼",\
     }
     remove_duplicates = True  # Remove duplicates in the same workspace
+    subscript_counts = True
+    SUB = str.maketrans("0123456789", "₀ ₂₃₄₅₆₇₈₉")  # do not show 1
     show_names: bool = False
     ignored_workspaces: List[str] = ["__i3_scratch"]
     log: logging.Logger = logging.Logger(name="wsr")
@@ -65,7 +68,15 @@ def get_classes(workspace: Con, configuration: Configuration) -> List[str]:
     leaves = workspace.leaves()
     result = [get_class(window, configuration) for window in leaves]
     if configuration.remove_duplicates:
-        result = list(dict.fromkeys(result))
+        if configuration.subscript_counts:
+            counts = collections.Counter(result)
+            without_duplicates = list(dict.fromkeys(result))
+            result = [
+                f"{key}{str(counts[key]).translate(configuration.SUB)}"
+                for key in without_duplicates
+            ]
+        else:
+            result = list(dict.fromkeys(result))
     return result
 
 
