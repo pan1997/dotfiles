@@ -14,7 +14,7 @@ import time
 class Configuration(object):
     logger = logging.getLogger(__name__)
     format = "{down} {up} "
-    padding = 20
+    padding = 18
     excluded_interfaces = ["lo*", "tun*"]
     
 
@@ -26,9 +26,10 @@ counters = \
 
 
 def human_readable_bytes(count: int) -> str:
-    for tag in ["B", "kB", "MB", "GB", "TB"]:
+    count = count / 1024
+    for tag in ["kB", "MB", "GB", "TB"]:
         if count < 1024:
-            return f"{count:.2f}{tag}"
+            return f"{count:.1f}{tag}"
         count = count / 1024
     return "∞"
 

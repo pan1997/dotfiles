@@ -1,0 +1,17 @@
+#separator {
+    margin: 10px;
+}
+#item-dmenu {
+    padding-left: 20px
+}
+#menu {
+    background-color: #a89984;
+    color: #282828;
+}
+#button:hover {
+    background-color: #ebdbb2;
+}
+#button:focus {
+    background-color: #98971a;
+}
+

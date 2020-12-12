@@ -33,6 +33,8 @@ class Configuration(object):
         "vlc": "嗢",
         "gnome-control-center": "",
         "eog": "",
+        "blueman-manager": "",
+        "pavucontrol": "蓼",\
     }
     remove_duplicates = True  # Remove duplicates in the same workspace
     show_names: bool = False

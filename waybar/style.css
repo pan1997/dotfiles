@@ -11,6 +11,8 @@ window#waybar {
     background: #1d2021;
     /*background: transparent;*/
     color: #ebdbd2;
+    margin: 10px;
+    padding: 10px;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -96,7 +98,6 @@ window#waybar {
 #idle_inhibitor {
     background-color: #98971a;
     padding: 0px 10px;
-    border-left: 0px;
 }
 
 #custom-power {

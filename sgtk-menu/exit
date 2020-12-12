@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Lock",
+    "exec": "swaylock -f -c 000000",
+    "icon": "lock"
+  },
+  {
+    "name": "Logout",
+    "exec": "swaymsg exit",
+    "icon": "exit"
+  },
+  {
+    "name": "Reboot",
+    "exec": "systemctl reboot",
+    "icon": "reload"
+  },
+  {
+    "name": "Shutdown",
+    "exec": "systemctl -i poweroff",
+    "icon": "window-close"
+  }
+]

@@ -111,11 +111,13 @@
     },
     "custom/power": {
         "format": "  ",
-        "on-click": "wlogout",
-        "tooltip": false
+        // "on-click": "wlogout",
+        "on-click": "sgtk-bar",
+        "tooltip": false,
     },
     "custom/arch": {
-        "format": ""
+        "format": "",
+	"on-click": "sgtk-grid",
     },
     "custom/media": {
         "format": "{icon} {}",

@@ -193,7 +193,9 @@ exec swayidle -w \
 
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+minus scratchpad show
+    #bindsym $mod+minus scratchpad show
+    bindsym F12 scratchpad show
+    #bindsym F12 scratchpad toggle
 #
 # Resizing containers:
 #
@@ -226,6 +228,7 @@ bindsym $mod+r mode "resize"
 bar {
     position top
     swaybar_command waybar
+    gaps 10px 10px
     #swaybar_command 
     
     # status_command i3status
@@ -274,8 +277,6 @@ bindsym $mod+l exec swaylock
 #bindsym XF86AudioLowerVolume exec pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob
 #bindsym XF86AudioMute exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob 
 
-
-
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -297,4 +298,10 @@ exec_always ~/.config/sway/tweaks.py
 input type:pointer {
     accel_profile flat
     pointer_accel 0.0
+}
+
+exec --no-startup-id kitty --config ~/.config/kitty/kitty-scratchpad.conf --class scratch-term
+for_window [app_id="scratch-term"] {
+    move scratchpad
+    floating enable
 }
