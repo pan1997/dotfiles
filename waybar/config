@@ -112,12 +112,12 @@
     "custom/power": {
         "format": "  ",
         // "on-click": "wlogout",
-        "on-click": "sgtk-bar",
+        "on-click": "nwgbar",
         "tooltip": false,
     },
     "custom/arch": {
         "format": "",
-	"on-click": "sgtk-grid",
+	"on-click": "nwggrid",
     },
     "custom/media": {
         "format": "{icon} {}",

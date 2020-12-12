@@ -2,8 +2,8 @@ ignore-empty-password
 font=Source Code Pro
 color=282828
 
-indicator-radius=240
-indicator-thickness=20
+indicator-radius=80
+indicator-thickness=10
 indicator-caps-lock
 
 key-hl-color=98971a
