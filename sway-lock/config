@@ -2,6 +2,13 @@ ignore-empty-password
 font=Source Code Pro
 color=282828
 
+screenshot
+clock
+indicator
+effect-vignette=0.1:0.5
+effect-blur=5x7
+fade0in=2
+
 indicator-radius=80
 indicator-thickness=10
 indicator-caps-lock
