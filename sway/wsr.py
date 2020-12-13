@@ -35,11 +35,11 @@ class Configuration(object):
         "gnome-control-center": "",
         "eog": "",
         "blueman-manager": "",
-        "pavucontrol": "蓼",\
+        "pavucontrol": "蓼",
     }
     remove_duplicates = True  # Remove duplicates in the same workspace
     subscript_counts = True
-    SUB = str.maketrans("0123456789", "₀ ₂₃₄₅₆₇₈₉")  # do not show 1
+    SUB = str.maketrans("0123456789", "₀₁₂₃₄₅₆₇₈₉")  # do not show 1
     show_names: bool = False
     ignored_workspaces: List[str] = ["__i3_scratch"]
     log: logging.Logger = logging.Logger(name="wsr")
@@ -72,7 +72,7 @@ def get_classes(workspace: Con, configuration: Configuration) -> List[str]:
             counts = collections.Counter(result)
             without_duplicates = list(dict.fromkeys(result))
             result = [
-                f"{key}{str(counts[key]).translate(configuration.SUB)}"
+                f"{key}{str(counts[key]).translate(configuration.SUB) if counts[key] != 1 else ''}"
                 for key in without_duplicates
             ]
         else:

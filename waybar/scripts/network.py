@@ -13,7 +13,7 @@ import time
 
 class Configuration(object):
     logger = logging.getLogger(__name__)
-    format = "{down} {up} "
+    format = "{up}⇅{down}"
     excluded_interfaces = ["lo*", "tun*"]
     number_padding = 6
 
