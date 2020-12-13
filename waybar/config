@@ -1,10 +1,9 @@
 {
     "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar at the bottom of your screen
-    "height": 25, // Waybar height
-    // "width": 1280, // Waybar width
+    // "height": 25, // Waybar height
     // Choose the order of the modules
-    "modules-left": ["custom/arch", "sway/workspaces", "sway/mode", "sway/window"],
+    "modules-left": ["custom/gap", "custom/arch", "sway/workspaces", "sway/mode", "sway/window"],
     "modules-right": [
         "custom/media",
         "pulseaudio",
@@ -17,7 +16,8 @@
         "clock#2",
         "tray",
         "idle_inhibitor",
-        "custom/power"
+        "custom/power",
+	"custom/gap"
     ],
     // Modules configuration
      "sway/workspaces": {
@@ -111,7 +111,7 @@
         "on-click": "pavucontrol"
     },
     "custom/power": {
-        "format": "  ",
+        "format": "",
         // "on-click": "wlogout",
         "on-click": "nwgbar",
         "tooltip": false,
@@ -119,6 +119,9 @@
     "custom/arch": {
         "format": "",
 	"on-click": "nwggrid",
+    },
+    "custom/gap": {
+        "format": " ",
     },
     "custom/media": {
         "format": "{icon} {}",

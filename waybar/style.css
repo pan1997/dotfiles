@@ -8,8 +8,8 @@
 
 window#waybar {
     /*background: #282828;*/
-    background: #1d2021;
-    /*background: transparent;*/
+    /*background: #1d2021;*/
+    background: transparent;
     color: #ebdbd2;
     margin: 10px;
     padding: 10px;
@@ -25,6 +25,7 @@ window#waybar {
 #window {
     padding: 0 20px;
     background: transparent;
+    color: #1d2021;
     font-size: 13px;
 }
 
@@ -36,11 +37,7 @@ window#waybar {
     border-bottom: 2px solid #b8bb26;
 }
 
-#mode {
-    background: #282828;
-}
-
-#clock.1, #clock.2, #battery, #cpu, #memory, #backlight, #network, #pulseaudio, #custom-mpd, #custom-playerctl, #tray, #mode, #idle_inhibitor, #custom-arch, #custom-media, #custom-network, #custom-power, #disk {
+#clock.1, #clock.2, #battery, #cpu, #memory, #backlight, #network, #pulseaudio, #custom-mpd, #custom-playerctl, #tray, #mode, #idle_inhibitor, #custom-arch, #custom-media, #custom-network, #custom-power, #disk, #mode {
     padding: 0 10px;
     margin: 0 0px;
     background: #32302f;
@@ -102,7 +99,7 @@ window#waybar {
 
 #custom-power {
     background-color: #fb4934;
-    padding: 0px 5px;
+    padding: 0px 10px;
 }
 
 #custom-arch {
@@ -111,4 +108,6 @@ window#waybar {
     font-size: 20px;
     padding: 0px 10px;
 }
-
+#custom-gap {
+    padding: 0px 1px;
+}
