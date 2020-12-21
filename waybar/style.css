@@ -22,11 +22,11 @@ window#waybar {
     border-right: 2px solid #1d2021;
 }
 
-#window {
+#window, #network {
     padding: 0 20px;
     background: transparent;
     color: #1d2021;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 #workspaces button.urgent {
@@ -37,7 +37,7 @@ window#waybar {
     border-bottom: 2px solid #b8bb26;
 }
 
-#clock.1, #clock.2, #battery, #cpu, #memory, #backlight, #network, #pulseaudio, #custom-mpd, #custom-playerctl, #tray, #mode, #idle_inhibitor, #custom-arch, #custom-media, #custom-network, #custom-power, #disk, #mode {
+#clock.1, #clock.2, #battery, #cpu, #memory, #backlight, #pulseaudio, #custom-mpd, #custom-playerctl, #tray, #mode, #idle_inhibitor, #custom-arch, #custom-media, #custom-network, #custom-power, #disk, #mode {
     padding: 0 10px;
     margin: 0 0px;
     background: #32302f;
@@ -105,7 +105,7 @@ window#waybar {
 #custom-arch {
     color: #458588;
     background: #1d2021;
-    font-size: 20px;
+    font-size: 22px;
     padding: 0px 10px;
 }
 #custom-gap {

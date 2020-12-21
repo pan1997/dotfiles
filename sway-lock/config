@@ -7,7 +7,7 @@ clock
 indicator
 effect-vignette=0.1:0.5
 effect-blur=5x7
-fade0in=2
+fade-in=0.5
 
 indicator-radius=80
 indicator-thickness=10
@@ -15,7 +15,7 @@ indicator-caps-lock
 
 key-hl-color=98971a
 
-separator-color=ebdbb2
+separator-color=32302f
 
 inside-color=1d2021
 inside-clear-color=458588
@@ -23,11 +23,11 @@ inside-caps-lock-color=a89984
 inside-ver-color=d79921
 inside-wrong-color=cc241d
 
-ring-color=d79921
-ring-clear-color=d79921
-ring-caps-lock-color=d79921
-ring-ver-color=d79921
-ring-wrong-color=d79921
+ring-color=ebdbb2
+ring-clear-color=ebdbb2
+ring-caps-lock-color=ebdbb2
+ring-ver-color=ebdbb2
+ring-wrong-color=ebdbb2
 
 line-color=00000000
 line-clear-color=ffd204FF

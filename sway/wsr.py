@@ -32,10 +32,12 @@ class Configuration(object):
         "org.qbittorrent.qBittorrent": "",
         "org.gnome.Nautilus": "",
         "vlc": "嗢",
+        "io.github.celluloid_player.Celluloid": "",
         "gnome-control-center": "",
         "eog": "",
         "blueman-manager": "",
         "pavucontrol": "蓼",
+        "geary": "",
     }
     remove_duplicates = True  # Remove duplicates in the same workspace
     subscript_counts = True

@@ -5,9 +5,9 @@
     // Choose the order of the modules
     "modules-left": ["custom/gap", "custom/arch", "sway/workspaces", "sway/mode", "sway/window"],
     "modules-right": [
+        "network",
         "custom/media",
         "pulseaudio",
-        "custom/network",
         "cpu",
         "memory",
         "disk",
@@ -17,7 +17,7 @@
         "tray",
         "idle_inhibitor",
         "custom/power",
-	"custom/gap"
+	"custom/gap",
     ],
     // Modules configuration
      "sway/workspaces": {
@@ -36,10 +36,10 @@
         "spacing": 10
     },
     "clock#1": {
-        "format": "{:%H:%M }"
+        "format": "{:%H:%M 🕒}"
     },
     "clock#2": {
-        "format": "{:%d %B, %Y }"
+        "format": "{:%d %B, %Y 📅}"
     },
     "battery": {
         "states": {
@@ -49,7 +49,7 @@
         },
         "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format-plugged": "{capacity}% 🔌",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
@@ -74,10 +74,11 @@
         "interval": 60,
     },
     "network": {
-        // "interface": "wlp2s0", // (Optional) To force the use of this interface
+        "interface": "e*", // (Optional) To force the use of this interface
         // "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-wifi": "{essid}   {bandwidthDownBits}",
-        "format-ethernet": "{ifname}: {bandwidthDownBits} {bandwidthUpBits} ",
+        // "format-wifi": "{essid}   {bandwidthDownBits}",
+        "format-wifi": "{bandwidthDownBits:>5}{bandwidthDownBits:>5} {essid}({signalStrength}%) ",
+        "format-ethernet": "{bandwidthDownBits:>5}{bandwidthUpBits:>5}",
         //"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
         "format-disconnected": "Disconnected ⚠",
         "interval": 1,
@@ -86,27 +87,15 @@
         "scroll-step": 5,
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon}",
-        "format-muted": "X            ",
+        "format-muted": "🔇",
         "format-icons": {
-            "headphones": "",
+            "headphones": "🎧",
             "handsfree": "",
             "headset": "",
-            "phone": "",
+            "phone": "📞",
             "portable": "",
             "car": "",
-            "default": [
-                "          ",
-                "█         ",
-                "██        ",
-                "███       ",
-                "████      ",
-                "█████     ",
-                "██████    ",
-                "███████   ",
-                "████████  ",
-                "█████████ ",
-                "██████████",
-            ]
+            "default": "🔊",
         },
         "on-click": "pavucontrol"
     },
@@ -118,7 +107,7 @@
     },
     "custom/arch": {
         "format": "",
-	"on-click": "nwggrid",
+        "on-click": "nwggrid",
     },
     "custom/gap": {
         "format": " ",
@@ -129,7 +118,7 @@
         "max-length": 40,
         "format-icons": {
             "spotify": "",
-            "default": "🎜"
+            "default": "🎵"
         },
         "escape": true,
         "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null" // Script in resources folder
@@ -138,7 +127,6 @@
         "format": "{}",
         "return-type": "json",
         "max-length": 40,
-        "escape": true,
         "exec": "$HOME/.config/waybar/scripts/network.py 2> /dev/null" // Script in resources folder
     },
     "wlr/taskbar": {
