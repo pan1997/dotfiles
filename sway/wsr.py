@@ -5,7 +5,7 @@ Based on https://github.com/pedroscaff/swaywsr.git
 import asyncio
 from i3ipc.aio import Connection
 from i3ipc.aio import Con
-from i3ipc import WindowEvent, WorkspaceEvent, Event, WorkspaceReply
+from i3ipc import WindowEvent, WorkspaceEvent, Event
 import functools
 import logging
 import collections
@@ -38,6 +38,7 @@ class Configuration(object):
         "blueman-manager": "",
         "pavucontrol": "蓼",
         "geary": "",
+        "tutanota-desktop": "",
     }
     remove_duplicates = True  # Remove duplicates in the same workspace
     subscript_counts = True

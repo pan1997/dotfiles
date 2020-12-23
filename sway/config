@@ -22,10 +22,7 @@ set $term kitty
 
 # set $menu dmenu_path | j4-dmenu-desktop --dmenu="bemenu -b -l 10 --fn SourceCodePro13 -i" --display-binary #| xargs swaymsg exec --
 
-#set $menu ulauncher --no-window-shadow
 set $menu wofi -c ~/.config/wofi/config -I
-
-#set $menu bemenu-run -b -l 10 --fn Hack13
 
 set $my_cursor Bibata-Modern-Classic
 set $my_cursor_size 24
@@ -39,9 +36,6 @@ exec_always {
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-#output * bg /home/pankaj/Pictures/the-kings-journey-wallpaper.jpg fill
 output * bg ~/.config/sway/bg.jpg fill
 #
 # Example configuration:
@@ -293,16 +287,11 @@ bindsym Control+Print exec grimshot --notify copy area
 bindsym Alt+Print exec grimshot --notify save screen
 bindsym Alt+Control+Print exec grimshot --notify save area
 
-#exec_always swaywsr --config ~/.config/swaywsr/config.toml
 exec_always ~/.config/sway/tweaks.py
+exec_always nm-applet --indicator
 
 input type:pointer {
     accel_profile flat
     pointer_accel 0.0
 }
 
-# exec --no-startup-id kitty --config ~/.config/kitty/kitty-scratchpad.conf --class scratch-term
-# for_window [app_id="scratch-term"] {
-#     move scratchpad
-#     floating enable
-# }
