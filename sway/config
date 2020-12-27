@@ -29,8 +29,12 @@ set $my_cursor_size 24
 
 seat seat0 xcursor_theme $my_cursor $my_cursor_size
 exec_always {
-    gsettings set org.gnome.desktop.interface cursor-theme $my_cursor
-    gsettings set org.gnome.desktop.interface cursor-size $my_cursor_size
+    gsettings set org.gnome.desktop.interface cursor-theme Bibata-Modern-Classic
+    gsettings set org.gnome.desktop.interface cursor-size 24
+    # gsettings set org.gnome.desktop.interface gtk-theme  
+    # gsettings set org.gnome.desktop.interface icon-theme 
+    # gsettings set org.gnome.desktop.interface font-theme 
+    #
 }
 
 
@@ -83,6 +87,7 @@ exec swayidle -w \
 
     # Kill focused window
     bindsym $mod+Shift+q kill
+    bindsym $mod+x kill
 
     # Start your launcher
     bindsym $mod+d exec $menu
