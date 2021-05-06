@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty
+set $term alacritty
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
@@ -24,12 +24,10 @@ set $term kitty
 
 set $menu wofi -c ~/.config/wofi/config -I
 
-set $my_cursor Bibata-Modern-Classic
-set $my_cursor_size 24
-
-seat seat0 xcursor_theme $my_cursor $my_cursor_size
+#set $my_cursor Bibata-Modern-Classic
+seat seat0 xcursor_theme oreo_spark_red_cursors 24
 exec_always {
-    gsettings set org.gnome.desktop.interface cursor-theme Bibata-Modern-Classic
+    gsettings set org.gnome.desktop.interface cursor-theme oreo_spark_red_cursors
     gsettings set org.gnome.desktop.interface cursor-size 24
     # gsettings set org.gnome.desktop.interface gtk-theme  
     # gsettings set org.gnome.desktop.interface icon-theme 
@@ -228,7 +226,7 @@ bindsym $mod+r mode "resize"
 bar {
     position top
     swaybar_command waybar
-    gaps 10px 10px
+    #gaps 10px 10px
     #swaybar_command 
     
     # status_command i3status
@@ -252,18 +250,18 @@ bar {
 include /etc/sway/config.d/*
 
 ### gaps
-gaps inner 10
-gaps outer 0
-smart_gaps off1
+# gaps inner 10
+# gaps outer 0
+# smart_gaps off1
 #smart_borders on
 #set $borderwidth 1
 
-default_border none
+default_border pixel 1
 default_floating_border none
 #client.focused b8bb26 282828 ebdbb2
 #client.focused_inactive 282828 282828 ebdbb2
 #client.unfocused 282828 282828 ebdbb2
-#hide_edge_borders both
+hide_edge_borders smart
 
 
 set $laptop eDP-1

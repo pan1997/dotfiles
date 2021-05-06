@@ -18,6 +18,7 @@ class Configuration(object):
     aliases: Dict[str, str] = {}
     icons: Dict[str, str] = {
         "ulauncher": "",
+        "gnome-terminal-server": "",
         "TelegramDesktop": "",
         "firefox": "",
         "Alacritty": "",

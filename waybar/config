@@ -1,10 +1,15 @@
+// -*- mode: json -*-
 {
   "layer": "top",
+  "position": "bottom",
   "output": [
     "HDMI-A-1"
   ],
+  "modules-center": [
+    "wlr/taskbar",
+  ],
   "modules-left": [
-    "custom/gap",
+    // "custom/gap",
     "custom/arch",
     "sway/workspaces",
     "sway/mode",
@@ -22,19 +27,20 @@
     "clock#2",
     "tray",
     "idle_inhibitor",
-    "custom/power",
-    "custom/gap"
+    "custom/power"
+    // "custom/gap"
   ],
   "sway/workspaces": {
     "disable-scroll": true,
     "all-outputs": false,
-    "format": "{name}"
+    "format": "{name}",
   },
   "sway/mode": {
     "format": "{}"
   },
   "sway/window": {
-    "format": "{}"
+    "format": "{}",
+    "max-length": 60
   },
   "clock#1": {
     "format": "{:%H:%M 🕒}"
@@ -130,11 +136,11 @@
   },
   "wlr/taskbar": {
     "format": "{icon}",
-    "icon-theme": "Papirus",
-    "icon-size": 15,
+    "icon-theme": "Reversal-black-dark",
+    "icon-size": 20,
     "on-click": "activate",
     "markup": true,
-    "max-length": 7,
+    "max-length": 9,
     "on-click-right": "minimize",
     "on-click-middle": "close"
   }

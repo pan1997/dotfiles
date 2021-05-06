@@ -7,6 +7,7 @@ Plug 'scrooloose/nerdTree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
+Plug 'joshdick/onedark.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
@@ -21,6 +22,6 @@ endif
 
 let g:gruvbox_italic=1
 set background=dark
-colorscheme gruvbox
+colorscheme onedark
 
 set number
